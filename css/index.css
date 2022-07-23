@@ -1,0 +1,144 @@
+.bounceMe {
+  /* Add the animation bounceArrow here */
+  animation: bounceArrow .2s infinite;
+}
+.spinMe {
+  /* Add the animation for spin on the line below  */
+  animation: spin .5s infinite;
+}
+#progressbar {
+  background-color: black;
+  border-radius: 5px;
+  margin-top: 61px;
+  padding: 3px;
+  border: 20px solid black;
+}
+#progressbar > .purpleBar {
+  background-color: orange;
+  width: 40%;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px dashed white;
+  /* add the animation name here for the progress bar */
+animation: loadBar 4s infinite;
+animation-fill-mode: forwards;
+}
+.movingBox {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  border: 3px dashed red;
+  /* Add the animation name here to mox the box */
+  animation: movingBox 3s infinite;
+}
+.movingBox2 {
+  width: 400px;
+  height: 40px;
+  background-color: darkolivegreen;
+  border: 14px dashed yellowgreen;
+  animation: movingBox2 2s infinite;
+}
+
+
+@keyframes bounceArrow {
+  from {
+    margin-top: 0px;
+  }
+  50% {
+    margin-top: 7px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes loadBar {
+  from {
+    width: 40%;
+    background-color: orange;
+  }
+  to {
+    width: 100%;
+    background-color: purple;
+  }
+}
+
+@keyframes movingBox {
+  from {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  25% {
+    transform: translate3d(100px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(50px, 300px, 0px);
+  }
+  75% {
+    transform: translate3d(200px, 100px, 0px);
+  }
+  to {
+    transform: translate3d(0px 0px, 0px);
+  }
+}
+
+@keyframes movingBox2 {
+  from {
+    transform: translate3d(0px, 0px, 0px, 0px);
+  }
+  15% {
+    transform: translate(10px, 0px, 0px);
+  }
+  25% {
+    transform: translate3d(100px, 500px, 0px);
+  }
+  50% {
+    transform: translate3d(75px, 200px, 0px);
+  }
+  75% {
+    transform: translate3d(100px, 5px, 0px);
+  }
+  to {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+
+/* these values are used to display the grid and items*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  "arrow preload"
+  "loadingBar loadingBar"
+  "boxMove boxMove"
+  ;
+}
+.gridChild {
+  margin: 15px;
+  padding: 15px;
+  height: 200px;
+}
+.arrow {
+  grid-area: arrow;
+  text-align: center;
+}
+.preload {
+  grid-area: preload;
+  text-align: center;
+}
+.loadingBar {
+  grid-area: loadingBar;
+}
+.boxMove {
+  grid-area: boxMove;
+}
